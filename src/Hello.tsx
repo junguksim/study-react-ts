@@ -3,11 +3,14 @@ import React from 'react';
 type HelloProps = {
     name: string;
     color: string;
+    isSpecial? : boolean;
 }
 
-function Hello({name,color} : HelloProps) {
+function Hello({name,color, isSpecial} : HelloProps) {
     return (
-        <div style={{color}}> 안녕하세요! {name} !</div>
+        <div style={{ color }}>
+            { isSpecial && <b> * </b> }
+            안녕하세요! {name} !</div>
     )
 }
 

@@ -4,7 +4,7 @@ type WrapperProps = {
   children?: React.ReactNode;
 }
 
-function Wrapper({children} : WrapperProps) {
+function Wrapper({ children }: WrapperProps) {
     const style = {
         border: '2px solid black',
         padding: '16px',
