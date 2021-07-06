@@ -13,7 +13,7 @@ type UserProps = {
   onRemove: Function;
   onToggle: Function;
 };
-function UserOne({ user, onRemove, onToggle }: any) {
+const UserOne = React.memo(({ user, onRemove, onToggle }: any) => {
   useEffect(() => {
     console.log('user 값이 설정됨');
     console.log(user);
@@ -38,7 +38,7 @@ function UserOne({ user, onRemove, onToggle }: any) {
       <button onClick={() => onRemove(user.id)}>삭제</button>
     </div>
   );
-}
+});
 
 function UserList({ users, onRemove, onToggle }: UserProps) {
   return (
@@ -55,4 +55,4 @@ function UserList({ users, onRemove, onToggle }: UserProps) {
   );
 }
 
-export default UserList;
+export default React.memo(UserList);
